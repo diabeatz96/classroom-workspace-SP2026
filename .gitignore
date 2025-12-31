@@ -1,0 +1,61 @@
+# ===========================================
+# Solution Files - Hidden until released
+# ===========================================
+# Comment out specific lines below to release solutions for each topic
+
+# Practice exercise solutions
+topic-01-output/exercises/practice/solutions/
+topic-02-variables-input/exercises/practice/solutions/
+topic-03-arithmetic-expressions/exercises/practice/solutions/
+topic-04-selection/exercises/practice/solutions/
+topic-05-loops/exercises/practice/solutions/
+topic-06-functions/exercises/practice/solutions/
+topic-07-arrays/exercises/practice/solutions/
+topic-08-strings-2d-arrays/exercises/practice/solutions/
+topic-09-searching-sorting/exercises/practice/solutions/
+topic-10-raylib/exercises/practice/solutions/
+topic-11-file-io/exercises/practice/solutions/
+
+# Completion exercise solutions
+topic-06-functions/exercises/completion/solutions/
+topic-07-arrays/exercises/completion/solutions/
+topic-08-strings-2d-arrays/exercises/completion/solutions/
+topic-09-searching-sorting/exercises/completion/solutions/
+topic-10-raylib/exercises/completion/solutions/
+
+# Mini-project solutions
+topic-01-output/mini-project/solution/
+topic-02-variables-input/mini-project/solution/
+topic-03-arithmetic-expressions/mini-project/solution/
+topic-04-selection/mini-project/solution/
+topic-05-loops/mini-project/solution/
+topic-06-functions/mini-project/solution/
+topic-07-arrays/mini-project/solution/
+topic-08-strings-2d-arrays/mini-project/solution/
+topic-09-searching-sorting/mini-project/solution/
+topic-10-raylib/mini-project/solution/
+topic-11-file-io/mini-project/solution/
+
+# ===========================================
+# Build artifacts and IDE files
+# ===========================================
+# Compiled executables
+*.exe
+*.out
+*.o
+*.obj
+
+# VS Code
+.vscode/
+
+# IDE and editor files
+*.sln
+*.vcxproj*
+.vs/
+*.user
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
