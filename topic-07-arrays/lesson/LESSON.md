@@ -1,5 +1,10 @@
 # Topic 07: Arrays
 
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250310111928267476/declare-array.webp" alt="Array Declaration" width="600">
+</p>
+<p align="center"><em>Arrays store multiple values of the same type in consecutive memory locations</em></p>
+
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
@@ -86,6 +91,11 @@ cout << garbage[0];    // Could output anything!
 
 ### Concept 4: Accessing Array Elements
 
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250310111928141186/access-array-elements.webp" alt="Accessing Array Elements" width="550">
+</p>
+<p align="center"><em>Array elements are accessed using their index (position)</em></p>
+
 Use the index (position) to access elements. **Indices start at 0!**
 
 ```cpp
@@ -108,6 +118,11 @@ arr[5] = 10;        // ERROR! Index 5 is out of bounds
 The last valid index is always `size - 1`.
 
 ### Concept 5: Traversing Arrays with Loops
+
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250310111928472679/traverse-array.webp" alt="Array Traversal" width="550">
+</p>
+<p align="center"><em>Using a loop to visit each element in the array</em></p>
 
 Use a `for` loop to process every element:
 

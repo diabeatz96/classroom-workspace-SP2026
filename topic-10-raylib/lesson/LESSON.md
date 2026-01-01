@@ -1,5 +1,10 @@
 # Topic 10: Introduction to Raylib
 
+<p align="center">
+  <img src="https://github.com/raysan5/raylib-intro-course/raw/main/images/raylib_game_loop_full.png" alt="Raylib Game Loop" width="700">
+</p>
+<p align="center"><em>The standard game loop: Initialize → Update → Draw → Cleanup</em></p>
+
 ## Learning Objectives
 
 After completing this lesson, you will be able to:

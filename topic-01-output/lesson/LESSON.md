@@ -1,5 +1,10 @@
 # Topic 01: Output and Program Structure
 
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20201028224032/BasicStructureOfCProgram.png" alt="C++ Program Structure" width="600">
+</p>
+<p align="center"><em>The basic structure of a C++ program showing its main components</em></p>
+
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
@@ -195,6 +200,11 @@ double area = 3.14159 * radius * radius;
 ### Concept 5: The Compilation Process
 
 Before your program can run, it must be compiled - translated from C++ (human-readable) to machine code (computer-readable).
+
+<p align="center">
+  <img src="https://scaler.com/topics/images/how-is-a-cpp-program-compiled-and-executed.webp" alt="C++ Compilation Process" width="650">
+</p>
+<p align="center"><em>The C++ compilation process: Source Code → Preprocessor → Compiler → Assembler → Linker → Executable</em></p>
 
 ```
 Source Code (.cpp) --> Compiler --> Executable Program

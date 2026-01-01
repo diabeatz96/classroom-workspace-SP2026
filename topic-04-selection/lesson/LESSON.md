@@ -1,5 +1,10 @@
 # Topic 04: Selection Structures
 
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230424101456/Conditional-Statements-in-c.webp" alt="Decision Making Flowchart" width="650">
+</p>
+<p align="center"><em>Different types of conditional statements available in C++</em></p>
+
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:

@@ -1,5 +1,10 @@
 # Topic 08: Strings and 2D Arrays
 
+<p align="center">
+  <img src="https://scaler.com/topics/images/initializing-a-2d-array-in-cpp.webp" alt="2D Array Visualization" width="550">
+</p>
+<p align="center"><em>A 2D array organized as rows and columns</em></p>
+
 ## Learning Objectives
 
 After completing this lesson, you will be able to:

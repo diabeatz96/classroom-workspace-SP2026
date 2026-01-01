@@ -1,5 +1,10 @@
 # Topic 11: File Input/Output
 
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20191129162746/CPP-File-Handling.png" alt="C++ File Handling" width="600">
+</p>
+<p align="center"><em>C++ file stream classes: ifstream for input, ofstream for output, fstream for both</em></p>
+
 ## Learning Objectives
 
 After completing this lesson, you will be able to:

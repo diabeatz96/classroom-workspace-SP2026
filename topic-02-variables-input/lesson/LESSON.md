@@ -1,5 +1,10 @@
 # Topic 02: Variables and Input
 
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250714112214026299/Data-Type-in-C-2.webp" alt="C++ Data Types" width="650">
+</p>
+<p align="center"><em>C++ data types organized by category</em></p>
+
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
@@ -18,6 +23,11 @@ Every useful program needs to work with data. When you build a calculator, you n
 ### Concept 1: What is a Variable?
 
 A variable is a named storage location in the computer's memory. Think of it as a labeled box where you can store a value.
+
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250122155858092295/Memory-Layout-of-C-Program.webp" alt="Memory Layout" width="450">
+</p>
+<p align="center"><em>How variables are stored in computer memory</em></p>
 
 ```cpp
 int age = 25;
@@ -112,6 +122,11 @@ cout << known;         // Outputs: 0
 ```
 
 ### Concept 4: Reading Input with cin
+
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191113125616/C-basic-input-output.png" alt="C++ Input/Output" width="550">
+</p>
+<p align="center"><em>cin reads input from the user, cout displays output to the screen</em></p>
 
 `cin` (pronounced "see-in") reads input from the user.
 

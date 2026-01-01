@@ -1,5 +1,10 @@
 # Topic 05: Repetition Structures (Loops)
 
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250719173109620611/Forloop.webp" alt="For Loop Flowchart" width="400">
+</p>
+<p align="center"><em>The for loop flowchart showing initialization, condition check, and update steps</em></p>
+
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
@@ -17,6 +22,11 @@ Loops let you process thousands of records, validate user input until correct, a
 ## Core Concepts
 
 ### Concept 1: The while Loop
+
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250719173109511150/While-loop.webp" alt="While Loop Flowchart" width="400">
+</p>
+<p align="center"><em>The while loop checks the condition before each iteration</em></p>
 
 The `while` loop repeats code as long as a condition is true:
 
@@ -63,6 +73,11 @@ for (int i = 1; i <= 5; i++) {
 - `i++` - update (runs after each iteration)
 
 ### Concept 3: The do-while Loop
+
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250719173109396294/Do-while-loop.webp" alt="Do-While Loop Flowchart" width="400">
+</p>
+<p align="center"><em>The do-while loop executes at least once before checking the condition</em></p>
 
 The `do-while` loop runs at least once, then checks the condition:
 

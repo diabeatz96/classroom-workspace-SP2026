@@ -1,5 +1,10 @@
 # Topic 06: Functions
 
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250721183542437329/Why-Use-Functions__.webp" alt="Why Use Functions" width="600">
+</p>
+<p align="center"><em>Functions help organize code into reusable, modular pieces</em></p>
+
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:

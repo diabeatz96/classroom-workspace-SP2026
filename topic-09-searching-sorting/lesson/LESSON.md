@@ -1,5 +1,10 @@
 # Topic 09: Searching and Sorting
 
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20251226110817160649/frame_1.webp" alt="Binary Search" width="650">
+</p>
+<p align="center"><em>Binary search divides the search space in half with each comparison</em></p>
+
 ## Learning Objectives
 
 After completing this lesson, you will be able to:
@@ -31,6 +36,11 @@ An algorithm is a step-by-step procedure for solving a problem. Good algorithms 
 ---
 
 ## Part 2: Linear Search
+
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240506105158/Linear-Search-algorithm-banner-(1).webp" alt="Linear Search" width="650">
+</p>
+<p align="center"><em>Linear search checks each element sequentially from start to end</em></p>
 
 ### The Basic Idea
 

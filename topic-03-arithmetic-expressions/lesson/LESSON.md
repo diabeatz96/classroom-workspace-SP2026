@@ -1,5 +1,10 @@
 # Topic 03: Arithmetic and Expressions
 
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250712180543718211/Operator-Precedence-in-C-01.webp" alt="C++ Operator Precedence" width="600">
+</p>
+<p align="center"><em>C++ operator precedence determines the order in which operations are performed</em></p>
+
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
