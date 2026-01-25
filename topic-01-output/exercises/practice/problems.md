@@ -182,6 +182,97 @@ Friday      9:00 AM         CSC 126
 
 ---
 
+## Problem 10: Formatted Price List (Intermediate - iomanip)
+
+Write a program using `iomanip` to display a formatted price list:
+
+```
+=====================================
+         ELECTRONICS STORE
+=====================================
+Product              Price      Stock
+-------------------------------------
+Laptop            $899.99         15
+Mouse              $24.50         42
+Keyboard           $75.00         28
+Monitor           $299.95         10
+-------------------------------------
+```
+
+**Requirements:**
+- Use `#include <iomanip>` for formatting
+- Use `setw()` to create aligned columns
+- Use `fixed` and `setprecision(2)` for prices
+- Use `left` alignment for product names
+- Use `right` alignment for prices and stock numbers
+
+---
+
+## Problem 11: Grade Report (Intermediate - iomanip)
+
+Write a program that displays a student grade report with proper decimal formatting:
+
+```
+========================================
+          SEMESTER GRADE REPORT
+========================================
+Student: Alex Johnson       ID: 12345
+
+Subject              Grade    Credits
+----------------------------------------
+Introduction to C++   92.50        3
+Calculus I            87.00        4
+English Composition   95.75        3
+Physics               88.25        4
+----------------------------------------
+Semester GPA:         3.52
+Total Credits:          14
+========================================
+```
+
+**Requirements:**
+- Use `fixed` and `setprecision(2)` for grades
+- Use `setprecision(2)` for the GPA
+- Use `setw()` to align all columns properly
+- Grades should show exactly 2 decimal places (87.00 not 87)
+
+---
+
+## Problem 12: Professional Invoice (Challenging - iomanip)
+
+Write a program that creates a professional-looking invoice using `setfill`:
+
+```
+============================================
+              ABC CONSULTING
+         Professional Services Invoice
+============================================
+Invoice #: INV-00042       Date: 01/15/2026
+
+Description                      Amount
+--------------------------------------------
+Website Design...............   $1,500.00
+Database Setup...............     $750.00
+Training (5 hours)...........     $375.00
+--------------------------------------------
+                    Subtotal:   $2,625.00
+                    Tax (8%):     $210.00
+============================================
+                       TOTAL:   $2,835.00
+============================================
+
+        Thank you for your business!
+```
+
+**Requirements:**
+- Use `setfill('.')` to create the dotted lines between descriptions and amounts
+- Use `setfill('-')` or `setfill('=')` for separator lines
+- Use `fixed` and `setprecision(2)` for all money amounts
+- Align descriptions to the left and amounts to the right
+- Reset `setfill(' ')` when needed for proper spacing
+
+---
+
 ## Submission Guidelines
 
 For each problem:

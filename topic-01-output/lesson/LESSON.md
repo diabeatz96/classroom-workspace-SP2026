@@ -13,6 +13,7 @@ By the end of this lesson, you will be able to:
 - Use escape sequences for formatting output
 - Write comments to document your code
 - Explain the purpose of each part of a basic C++ program
+- Use `iomanip` to format numbers and align output in columns
 
 ## Why This Matters
 
@@ -223,55 +224,248 @@ When you click "Run" or "Build" in your IDE, this process happens automatically.
 
 Always read error messages carefully. They tell you the line number and type of problem.
 
-## Putting It Together
+### Concept 6: Formatting Output with iomanip
 
-Here is a complete program that demonstrates all the concepts from this lesson:
+The `<iomanip>` library (input/output manipulation) provides tools for precise control over how output is formatted. This is essential for creating professional-looking output like tables, reports, and formatted numbers.
+
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250423114649/iomanip-in-cpp.webp" alt="C++ iomanip" width="600">
+</p>
+<p align="center"><em>The iomanip library provides manipulators for formatting output</em></p>
+
+**Including iomanip:**
 
 ```cpp
-// Program: Course Information Display
+#include <iostream>
+#include <iomanip>  // Required for formatting manipulators
+using namespace std;
+```
+
+#### Setting Decimal Precision with `fixed` and `setprecision`
+
+By default, C++ may display numbers in scientific notation or with varying decimal places. Use `fixed` and `setprecision` for consistent decimal output:
+
+```cpp
+double price = 19.5;
+double pi = 3.14159265358979;
+
+// Without formatting - inconsistent output
+cout << price << '\n';    // Output: 19.5
+cout << pi << '\n';       // Output: 3.14159
+
+// With fixed and setprecision
+cout << fixed << setprecision(2);
+cout << price << '\n';    // Output: 19.50
+cout << pi << '\n';       // Output: 3.14
+```
+
+**Key points:**
+- `fixed` ensures decimal notation (not scientific)
+- `setprecision(n)` sets the number of decimal places
+- These settings persist for all subsequent output until changed
+
+#### Setting Column Width with `setw`
+
+`setw(n)` sets the minimum width for the **next** output item. This is essential for creating aligned columns:
+
+```cpp
+cout << setw(10) << "Name" << setw(8) << "Age" << setw(10) << "Salary" << '\n';
+cout << setw(10) << "Alice" << setw(8) << 25 << setw(10) << 55000 << '\n';
+cout << setw(10) << "Bob" << setw(8) << 30 << setw(10) << 62000 << '\n';
+```
+
+Output:
+```
+      Name     Age    Salary
+     Alice      25     55000
+       Bob      30     62000
+```
+
+**Important:** Unlike `fixed` and `setprecision`, `setw` only affects the **next** output item. You must use it before each item you want to format.
+
+#### Alignment with `left` and `right`
+
+By default, output is right-aligned within the width. Use `left` for left-alignment:
+
+```cpp
+// Right-aligned (default)
+cout << right;
+cout << setw(10) << "Hello" << '\n';    // Output: "     Hello"
+
+// Left-aligned
+cout << left;
+cout << setw(10) << "Hello" << '\n';    // Output: "Hello     "
+```
+
+**Practical example - a formatted table:**
+
+```cpp
+cout << left;  // Left-align text
+cout << setw(15) << "Product" << setw(10) << "Price" << setw(8) << "Qty" << '\n';
+cout << setw(15) << "Apple" << setw(10) << 1.50 << setw(8) << 10 << '\n';
+cout << setw(15) << "Banana" << setw(10) << 0.75 << setw(8) << 25 << '\n';
+cout << setw(15) << "Orange" << setw(10) << 2.00 << setw(8) << 15 << '\n';
+```
+
+Output:
+```
+Product        Price     Qty
+Apple          1.5       10
+Banana         0.75      25
+Orange         2         15
+```
+
+#### Filling Empty Space with `setfill`
+
+`setfill(char)` specifies what character to use for padding instead of spaces:
+
+```cpp
+cout << setfill('*');
+cout << setw(10) << 42 << '\n';      // Output: ********42
+
+cout << setfill('0');
+cout << setw(5) << 7 << '\n';        // Output: 00007
+
+cout << setfill('-');
+cout << setw(20) << "" << '\n';      // Output: -------------------- (a line!)
+```
+
+**Practical example - formatting a receipt:**
+
+```cpp
+cout << fixed << setprecision(2);
+cout << setfill('.');
+cout << left << setw(20) << "Subtotal" << right << setw(10) << 45.99 << '\n';
+cout << left << setw(20) << "Tax" << right << setw(10) << 3.68 << '\n';
+cout << left << setw(20) << "Total" << right << setw(10) << 49.67 << '\n';
+```
+
+Output:
+```
+Subtotal..............45.99
+Tax....................3.68
+Total.................49.67
+```
+
+#### Quick Reference for iomanip
+
+| Manipulator | Purpose | Persists? |
+|-------------|---------|-----------|
+| `fixed` | Use decimal notation (not scientific) | Yes |
+| `setprecision(n)` | Set decimal places | Yes |
+| `setw(n)` | Set minimum field width | **No** (next item only) |
+| `left` | Left-align output | Yes |
+| `right` | Right-align output (default) | Yes |
+| `setfill(c)` | Set padding character | Yes |
+
+**Common Mistakes with iomanip:**
+- Forgetting `#include <iomanip>`
+- Expecting `setw` to persist (it only affects the next item)
+- Using `setprecision` without `fixed` (may still get scientific notation for very large/small numbers)
+- Forgetting that `fixed` and `setprecision` affect ALL subsequent numeric output
+
+## Putting It Together
+
+Here is a complete program that demonstrates all the concepts from this lesson, including `iomanip` formatting:
+
+```cpp
+// Program: Student Grade Report
 // Author: Your Name
 // Date: January 2026
-// Description: Displays formatted course information
+// Description: Displays a formatted grade report using iomanip
 
 #include <iostream>
+#include <iomanip>  // For setw, setprecision, fixed, left, right
 using namespace std;
 
 int main() {
     // Display a header with a border
-    cout << "================================" << '\n';
-    cout << "    CSC 126 Course Info         " << '\n';
-    cout << "================================" << '\n';
-    cout << '\n';  // Blank line for spacing
-
-    // Display course details using tabs for alignment
-    cout << "Course:\t\tIntroduction to Computer Science" << '\n';
-    cout << "Section:\t001" << '\n';
-    cout << "Credits:\t3" << '\n';
+    cout << "========================================" << '\n';
+    cout << "        STUDENT GRADE REPORT           " << '\n';
+    cout << "========================================" << '\n';
     cout << '\n';
 
-    // Display a quote (demonstrates escape sequences)
-    cout << "Remember: \"The only way to learn programming is to program.\"" << '\n';
+    // Student information
+    cout << "Student:\tJohn Smith" << '\n';
+    cout << "ID:\t\t12345" << '\n';
+    cout << "Semester:\tSpring 2026" << '\n';
     cout << '\n';
 
-    // Display file path example (demonstrates backslash)
-    cout << "Save your work to: C:\\CSC126\\Projects\\" << '\n';
+    // Set up formatting for the grade table
+    cout << fixed << setprecision(1);  // Show 1 decimal place
+
+    // Table header with column widths
+    cout << left << setw(20) << "Course"
+         << right << setw(8) << "Credits"
+         << setw(10) << "Grade" << '\n';
+
+    // Separator line
+    cout << setfill('-') << setw(38) << "" << '\n';
+    cout << setfill(' ');  // Reset fill character to space
+
+    // Course data rows
+    cout << left << setw(20) << "Intro to C++"
+         << right << setw(8) << 3
+         << setw(10) << 92.5 << '\n';
+
+    cout << left << setw(20) << "Calculus I"
+         << right << setw(8) << 4
+         << setw(10) << 88.0 << '\n';
+
+    cout << left << setw(20) << "English Comp"
+         << right << setw(8) << 3
+         << setw(10) << 95.3 << '\n';
+
+    // Separator line
+    cout << setfill('-') << setw(38) << "" << '\n';
+    cout << setfill(' ');
+
+    // Summary with 2 decimal places for GPA
+    cout << setprecision(2);
+    cout << left << setw(20) << "GPA:"
+         << right << setw(18) << 3.67 << '\n';
+
+    cout << '\n';
+
+    // Motivational quote with escape sequences
+    cout << "\"Success is not final, failure is not fatal.\"" << '\n';
+    cout << "Keep your files at: C:\\School\\CSC126\\" << '\n';
 
     return 0;
 }
 ```
 
-**Line-by-line explanation:**
+**Program Output:**
+```
+========================================
+        STUDENT GRADE REPORT
+========================================
 
-- Lines 1-5: Multi-purpose header comment with author and description
-- Line 7: Include the iostream library for input/output
-- Line 8: Use the standard namespace
-- Line 10: Start of main function
-- Lines 11-14: Create a visual header using repeated characters
-- Line 15: Empty `cout` with just newline creates a blank line
-- Lines 17-20: Use `\t` (tabs) to align information in columns
-- Line 23: Use `\"` to include quote marks inside a string
-- Line 26: Use `\\` to display backslashes in a file path
-- Line 28: Return 0 to indicate successful completion
+Student:	John Smith
+ID:		12345
+Semester:	Spring 2026
+
+Course              Credits     Grade
+--------------------------------------
+Intro to C++              3      92.5
+Calculus I                4      88.0
+English Comp              3      95.3
+--------------------------------------
+GPA:                           3.67
+
+"Success is not final, failure is not fatal."
+Keep your files at: C:\School\CSC126\
+```
+
+**Key concepts demonstrated:**
+
+- **Lines 7-8**: Include both `iostream` and `iomanip` libraries
+- **Line 21**: `fixed` and `setprecision(1)` for consistent decimal display
+- **Lines 24-26**: `left` and `right` alignment with `setw` for table columns
+- **Lines 29-30**: `setfill('-')` creates a separator line, then reset to space
+- **Lines 33-44**: Consistent column formatting using `setw` for each item
+- **Line 51**: Change precision to 2 decimal places for GPA
+- **Lines 57-58**: Escape sequences for quotes and backslashes
 
 ## Quick Reference
 
@@ -293,12 +487,31 @@ cout << "A" << "B";       // Chain multiple items
 ### Program Structure
 ```cpp
 #include <iostream>
+#include <iomanip>    // Include for formatting
 using namespace std;
 
 int main() {
     // Your code here
     return 0;
 }
+```
+
+### iomanip Formatting
+```cpp
+// Decimal precision (persists)
+cout << fixed << setprecision(2);
+cout << 3.14159;              // Output: 3.14
+
+// Column width (next item only!)
+cout << setw(10) << "Hello";  // Output: "     Hello"
+
+// Alignment (persists)
+cout << left << setw(10) << "Hi";   // Output: "Hi        "
+cout << right << setw(10) << "Hi";  // Output: "        Hi"
+
+// Fill character (persists)
+cout << setfill('*') << setw(10) << 42;  // Output: ********42
+cout << setfill(' ');                     // Reset to spaces
 ```
 
 ### Comments
@@ -343,3 +556,34 @@ int main() {
 #include (iostream)    // Error: wrong syntax
 ```
 **Fix:** Use angle brackets for standard libraries: `#include <iostream>`
+
+### 6. Forgetting to Include iomanip
+```cpp
+#include <iostream>
+// Missing: #include <iomanip>
+
+cout << setw(10) << "Hello";  // Error: setw not defined
+```
+**Fix:** Add `#include <iomanip>` at the top of your file.
+
+### 7. Expecting setw to Persist
+```cpp
+cout << setw(10);
+cout << "Hello";      // setw(10) applies here
+cout << "World";      // setw does NOT apply here - back to default!
+```
+**Fix:** Use `setw` before **each** item you want to format:
+```cpp
+cout << setw(10) << "Hello" << setw(10) << "World";
+```
+
+### 8. Decimal Output Without fixed
+```cpp
+cout << setprecision(2);
+cout << 1234567.89;   // May show: 1.2e+06 (scientific notation!)
+```
+**Fix:** Always use `fixed` with `setprecision` for decimal numbers:
+```cpp
+cout << fixed << setprecision(2);
+cout << 1234567.89;   // Output: 1234567.89
+```
